@@ -1,0 +1,17 @@
+Regular Expressions are frequently used in all 
+languages to search for a pattern or word 
+in any string. 
+MongoDB also provides functionality of regular expression for string pattern matching using the $regex operator. MongoDB uses PCRE (Perl Compatible Regular Expression) 
+as regular expression language.
+
+help linke:  
+https://www.tutorialspoint.com/mongodb/mongodb_regular_expression.htm
+
+Syntax:
+db.COLLECTION_NAME.find({KEY:{$regex: 'VALUE'}})
+
+example:  
+db.article.find({'source.name' : { $regex : 'Marketwatch'}}, { 'author': 1, 'source.name' :1 })      
+
+//Case insensitive search
+ db.article.find({'source.name' : { $regex : 'marketwatch', $options: '$i' }}, { 'author': 1, 'source.name' :1 })      
