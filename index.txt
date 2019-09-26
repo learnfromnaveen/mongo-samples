@@ -1,0 +1,12 @@
+Reference:  
+https://docs.mongodb.com/manual/indexes/
+
+db.collection.createIndex( <key and index type specification>, <options> )
+
+example:  
+a. create a unique index for name on collection person  
+
+    db.person.createIndex({name: 1}, {unique: true}); 
+
+b. create compound unique keys on collection person  for  
+    firstName, lastName field  
