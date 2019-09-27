@@ -1,0 +1,25 @@
+Reference:  
+https://docs.mongodb.com/manual/tutorial/iterate-a-cursor/
+
+
+example:  
+
+var cursor = db.person.find({name: 'Jack'})  
+var person = { };  
+var addressJson =  {};  
+cursor.forEach((json) => { 
+person.name =  json.name;
+person.address = [];
+person.address_ids = json.address_ids;
+
+   var addressCursor = db.address.find({'_id' : { '$in': person.address_ids }}); 
+
+   addressCursor.forEach((address) => {
+    var add = {};
+    add.id = address._id.toString(); 
+    add.building = address.building;	  
+    person.address.push(add);   
+   });
+});
+
+print(JSON.stringify(person)); 
