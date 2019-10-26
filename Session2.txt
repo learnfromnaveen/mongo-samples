@@ -53,6 +53,8 @@
 
     example:  
     db.user.update({ name: 'Smith'}, { $set: { name: 'Smith Jr.' }})
+    
+    Note: use updateMany to update multiple records 
 
 4. Deleting specifi document  
 
