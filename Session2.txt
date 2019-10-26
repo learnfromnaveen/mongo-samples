@@ -72,3 +72,10 @@
     example:  
     mongoimport --db mydb --collection user --file c:\files\users.json --jsonArray
     
+    note:
+    if mongo import is not work set the enviroment varable as given below  
+     
+    set the user enviroment variable for path 
+
+    C:\Program Files\MongoDB\Server\4.1\bin
+    
